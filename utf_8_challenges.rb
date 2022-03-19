@@ -37,19 +37,15 @@ class Utf8Challenges < Minitest::Test
     ASCII = Encoding::US_ASCII
 
     specify 'bytes to ASCII string' do
-      skip
-
       bytes = [0x48, 0x65, 0x6C, 0x6C, 0x6F]
-      expected_string = '' # TODO
+      expected_string = 'Hello' # TODO
 
       assert bytes_to_string(bytes, as: ASCII) == expected_string.encode(ASCII)
     end
 
     specify 'ASCII string to bytes' do
-      skip
-
       string = 'world'
-      expected_bytes = [] # TODO
+      expected_bytes = [119, 111, 114, 108, 100] # TODO
 
       assert string.encode(ASCII).bytes == expected_bytes
     end
@@ -73,19 +69,15 @@ class Utf8Challenges < Minitest::Test
     ISO_8859_1 = Encoding::ISO_8859_1
 
     specify 'bytes to ISO-8859-1 string' do
-      skip
-
       bytes = [0x63, 0x61, 0x66, 0xE9]
-      expected_string = '' # TODO
+      expected_string = 'café' # TODO
 
       assert bytes_to_string(bytes, as: ISO_8859_1) == expected_string.encode(ISO_8859_1)
     end
 
     specify 'ISO-8859-1 string to bytes' do
-      skip
-
       string = '£50'
-      expected_bytes = [] # TODO
+      expected_bytes = [163, 53, 48] # TODO
 
       assert string.encode(ISO_8859_1).bytes == expected_bytes
     end
@@ -126,20 +118,16 @@ class Utf8Challenges < Minitest::Test
     # https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)
 
     specify 'Unicode string to code points' do
-      skip
-
       # tip: https://www.fileformat.info/info/unicode/char/search.htm
       codepoints = [0x3C0, 0x20, 0x2248, 0x20, 0x33]
-      expected_string = '' # TODO
+      expected_string = 'π ≈ 3' # TODO
 
       assert codepoints_to_string(codepoints) == expected_string
     end
 
     specify 'code points to Unicode string' do
-      skip
-
       string = '⌘C ⌘V'
-      expected_codepoints = [] # TODO
+      expected_codepoints = [0x2318, 0x43, 0x20, 0x2318, 0x56] # TODO
 
       assert string.codepoints == expected_codepoints
     end
